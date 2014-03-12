@@ -7,12 +7,20 @@
 //
 
 #import "Homepwner2AppDelegate.h"
+#import "ItemsViewController.h"
 
 @implementation Homepwner2AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+     // Override point for customization after application launch.
+    ItemsViewController *itemsViewController = [[ItemsViewController alloc] init];
+   
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController: itemsViewController];
+    
+    [[self window] setRootViewController: navController];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
